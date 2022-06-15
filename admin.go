@@ -1,13 +1,7 @@
 package main
 
-import (
-	"easy-apis/utils"
-	"fmt"
-	"net/http"
-)
+import "easy-apis/routers"
 
 func main() {
-	//routers.InitAdminRouters()
-	ret, _ := utils.GetIP(&http.Request{})
-	fmt.Println(ret)
+	routers.InitAdminRouters()
 }

@@ -8,7 +8,13 @@ import (
 func InitAdminRouters() {
 	r := gin.Default()
 
-	// 登录
-	r.POST("login", controller.Login)
+	// 用户路由组
+	userGroup := r.Group("/user/")
+	userGroup.Use()
+	{
+		userGroup.POST("signup", controller.SignUp)
+		//userGroup.POST("login", controller.Login)
+	}
 
+	r.Run(":8888")
 }
